@@ -1,0 +1,8 @@
+{
+  "gui.gameshowsb.timer": "Timer",
+  "key.gameshowsb.open_screen": "Open Screen",
+  "category.gameshowsb.game_show": "Game Show",
+  "key.gameshowsb.pause_timer": "Pause Timer",
+  "key.gameshowsb.reset_timer": "Reset Timer",
+  "key.gameshowsb.swap_double_timer": "Swap Double Timer"
+}

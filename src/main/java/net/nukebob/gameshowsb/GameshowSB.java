@@ -103,16 +103,21 @@ public class GameshowSB implements ClientModInitializer {
 			}
 			while (pauseTimer.wasPressed()) {
 				if (!showDoubleTimer) {
+					timer = timerStartValue-(new Date().getTime()-timerStarted.getTime())/1000.0;
 					timerStartValue = timer;
 					timerRunning = !timerRunning;
 					timerStarted = new Date();
 				} else {
+					if (redTurn) doubleTimerRed = doubleTimerStartValue-(new Date().getTime()-doubleTimerStarted.getTime())/1000.0;
+					else doubleTimerBlue = doubleTimerStartValue-(new Date().getTime()-doubleTimerStarted.getTime())/1000.0;
 					doubleTimerStartValue = redTurn ? doubleTimerRed : doubleTimerBlue;
 					doubleTimerRunning = !doubleTimerRunning;
 					doubleTimerStarted = new Date();
 				}
 			}
 			while (swapDoubleTimer.wasPressed()) {
+				if (redTurn) doubleTimerRed = doubleTimerStartValue-(new Date().getTime()-doubleTimerStarted.getTime())/1000.0;
+				else doubleTimerBlue = doubleTimerStartValue-(new Date().getTime()-doubleTimerStarted.getTime())/1000.0;
 				redTurn=!redTurn;
 				doubleTimerStartValue = redTurn ? doubleTimerRed : doubleTimerBlue;
 				doubleTimerStarted = new Date();
